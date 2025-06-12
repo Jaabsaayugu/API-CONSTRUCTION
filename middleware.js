@@ -10,7 +10,7 @@ export function validateTask(req, res, next) {
   }
 
   if (!isCompleted) {
-    return res.status(400).json({ message: 'The status of the job should be provided.' });
+    return res.status(400).json({ message: 'The status of the task should be provided.' });
   }
 
   next(); 

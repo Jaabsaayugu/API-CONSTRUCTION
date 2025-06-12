@@ -7,7 +7,7 @@ const client = new PrismaClient();
 
 app.use(express.json());
 
-app.post('/task/:id',validateTask, async (req, res) => {
+app.post('/tasks',validateTask, async (req, res) => {
   try {
     const { title, description,isCompleted } = req.body;
     const task = await client.task.create({
@@ -24,7 +24,7 @@ app.post('/task/:id',validateTask, async (req, res) => {
   }
 });
 
-app .get('/tasks/:id',validateTask, async (req, res) => {
+app .get('/tasks', async (req, res) => {
     try {
     const tasks = await client.task.findMany({
         where: {
@@ -38,7 +38,7 @@ app .get('/tasks/:id',validateTask, async (req, res) => {
     }
   });
 
- app.get('/tasks/:id',validateTask, async (req, res) => {
+ app.get('/tasks/id', async (req, res) => {
   try {
     const { id } = req.params;
     const task = await client.task.findUnique({
@@ -76,7 +76,7 @@ app .get('/tasks/:id',validateTask, async (req, res) => {
   }
 });
 
-  app.delete('/tasks/:id',validateTask, async (req, res) => {
+  app.delete('/tasks/:id', async (req, res) => {
   const { id } = req.params;
   try {
     await client.task.delete({

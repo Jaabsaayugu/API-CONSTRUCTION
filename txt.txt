@@ -1,0 +1,1 @@
+PGPASSWORD=ymp51PK14qUfVEAMzuNGd0mMemgqZ0AV psql -h dpg-d15ipkp5pdvs73fc0qj0-a.oregon-postgres.render.com -U api_construction_user api_construction
